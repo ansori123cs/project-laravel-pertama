@@ -10,4 +10,8 @@ class Post extends Model
     use HasFactory;
     // protected $fillable=['title','exerpt','body'];
     protected $guarded=['id'];
+    // hubungan relasi database
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

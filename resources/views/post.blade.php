@@ -3,6 +3,7 @@
     <div class="container p-3 mt-3">
         <div class="title">
             <h3 class="card-title">{{ $posts->title }}</h3>
+          
             <a href="#{{ $posts->title }}" class="btn btn-danger mt-3 mb-3 ">Lokasi <i class="bi bi-geo-alt-fill"></i></a>
         </div>
 
@@ -34,6 +35,7 @@
           </div>
 
         <h5>{{ $posts->title }}</h5>
+        <p class="mb-5 mt-5 "> <a href="/categories/{{ $posts->category->slug }}">{{ $posts->category->name }}</a>{{ $posts->category->name }} Ditulis Oleh <a href="">Ahmad ansori</a></p>
         <p class="card-text">{!! $posts->body !!}</p>
         <a href="/posts" class="btn btn-danger"> < Kembali</a>
     </div>
