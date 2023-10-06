@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
 {
@@ -12,6 +15,13 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DB::table('categories')->insert([
+            'name' => ' Wisata Pantai',
+            'slug' => 'wisata-pantai',
+        ]);
+        DB::table('categories')->insert([
+            'name' => 'Wisata gunung',
+            'slug' => 'wisata-gunung',
+        ]);
     }
 }

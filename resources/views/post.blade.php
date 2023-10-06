@@ -15,13 +15,13 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="../img/posts-img/{{ $posts->img }}.jpg" class="d-block w-100" alt="...">
+                <img src="../img/posts-img/{{ $posts->img }}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="../img/posts-img/{{ $posts->img }}.jpg" class="d-block w-100" alt="...">
+                <img src="../img/posts-img/{{ $posts->img }}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="../img/posts-img/{{ $posts->img }}.jpg" class="d-block w-100" alt="...">
+                <img src="../img/posts-img/{{ $posts->img }}" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -35,7 +35,7 @@
           </div>
 
         <h5>{{ $posts->title }}</h5>
-        <p class="mb-5 mt-5 "> <a href="/categories/{{ $posts->category->slug }}">{{ $posts->category->name }}</a>{{ $posts->category->name }} Ditulis Oleh <a href="">Ahmad ansori</a></p>
+        <p class="mb-5 mt-5 "> <a href="/categories/{{ $posts->category->slug }}">{{ $posts->category->name }}</a>{{ $posts->category->name }} Ditulis Oleh <a href="">{{ $posts->user->name}}</a></p>
         <p class="card-text">{!! $posts->body !!}</p>
         <a href="/posts" class="btn btn-danger"> < Kembali</a>
     </div>

@@ -1,7 +1,7 @@
 @extends('layout/main')
 @section('main')
 <div class="p-5 mb-4 bg-light rounded-3">
-<h2 class="mb-5 ">Category: {{ $category }}</h2>
+<h2 class="mb-5 ">Author: {{ $posts }}</h2>
   <div class="row align-items-start">
     @foreach ($posts as $posts)
     <div class="card mb-3" style="max-width: 85rem;">
