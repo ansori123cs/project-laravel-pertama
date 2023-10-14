@@ -19,41 +19,43 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('home',[
-        "title"=>"Home"
+    return view('home', [
+        "title" => "Home",
+        'active' => 'home'
     ]);
 });
 Route::get('/about', function () {
-    return view('about',[
-        "title"=>"AboutMe",
+    return view('about', [
+        "title" => "AboutMe",
+        'active' => 'about',
         "name" => "Ansori",
         "email" => "ansori@gmail.com",
         "jurusan" => "Sistem Informasi"
     ]);
 });
-Route::get('/posts', [PostController::class,'index']);
+Route::get('/posts', [PostController::class, 'index']);
 
-Route::get('posts/{post}', [PostController::class,'show']);
+Route::get('posts/{post}', [PostController::class, 'show']);
 
-Route::get('/categories',function(){
-    return view('categories',[
-        'title'=>'Post Categories',
-        'categories'=>Category::all()
+Route::get('/categories', function () {
+    return view('categories', [
+        'title' => 'Post Categories',
+        'active' => 'categories',
+        'categories' => Category::all()
     ]);
-
 });
 
-Route::get('/categories/{category:slug}', function(Category $category){
-    return view('posts',[
-        'title'=>"Category :$category->name",
-        'posts'=>$category->post->load(['user','category']),
+Route::get('/categories/{category:slug}', function (Category $category) {
+    return view('posts', [
+        'title' => "Category :$category->name",
+        'active' => 'cattegories',
+        'posts' => $category->post->load(['user', 'category']),
     ]);
-    
 });
-Route::get('/authors/{user}', function(User $user){
-    return view('posts',[
-        'title'=>"Ditulis Oleh :$user->name",
-        'posts'=>$user->posts->load(['user','category']),
+Route::get('/authors/{user}', function (User $user) {
+    return view('posts', [
+        'title' => "Ditulis Oleh :$user->name",
+        'active' => 'user',
+        'posts' => $user->posts->load(['user', 'category']),
     ]);
-    
 });

@@ -16,12 +16,20 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-            'name' => ' Wisata Pantai',
-            'slug' => 'wisata-pantai',
+            'name' => 'Bulking tips',
+            'slug' => 'bulking-tips',
         ]);
         DB::table('categories')->insert([
-            'name' => 'Wisata gunung',
-            'slug' => 'wisata-gunung',
+            'name' => 'Cutting tips',
+            'slug' => 'cutting-tips',
+        ]);
+        DB::table('categories')->insert([
+            'name' => 'Tips and Trick',
+            'slug' => 'tips-and-trick',
+        ]);
+        DB::table('categories')->insert([
+            'name' => 'Workout',
+            'slug' => 'workout',
         ]);
     }
 }
