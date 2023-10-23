@@ -54,4 +54,8 @@
 @else
 <p class="fs-4 text-center">Post Not Found!!!</p>
 @endif
+<div class="d-flex justify-content-center">
+  {{ $posts->links() }}
+</div>
+
 @endsection
