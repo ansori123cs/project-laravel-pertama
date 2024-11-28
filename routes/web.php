@@ -62,4 +62,6 @@ Route::get('/authors/{user}', function (User $user) {
     ]);
 });
 Route::get('/login',[LoginController::class,'index']);
+Route::get('/login',[LoginController::class,'authenticated']);
 Route::get('/register',[RegisterController::class,'index']);
+Route::post('/register',[RegisterController::class,'store']);

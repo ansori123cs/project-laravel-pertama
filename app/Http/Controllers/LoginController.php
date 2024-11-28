@@ -12,4 +12,7 @@ class LoginController extends Controller
             'active' => 'login'
         ]);
     }
+    public function authenticated(Request $request){
+        $this->validate($request,[]);
+    }
 }
